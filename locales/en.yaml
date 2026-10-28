@@ -1,0 +1,56 @@
+start_message: 'Welcome! Here you can subscribe or renew your subscription to our private channel/chat.'
+
+subscribe_button: '💳 Subscribe'
+status_button: 'ℹ️ My Subscription'
+renew_button: '🔄 Renew Subscription'
+
+done_button: 'Done'
+confirm_button: 'Confirm'
+back_button: 'Back'
+close_button: 'Close'
+cancel_button: 'Cancel'
+
+user_url: '<a href="tg://user?id=${id}">${username}</a>'
+bot_url: 'https://t.me/${username}?start=${query}'
+channel_url: '<a href="${url}">${title}</a>'
+
+subscription_status_active: |
+  ✅ <b>Your subscription is active!</b>
+  📅 Valid until: <b>${expiresAt}</b>
+  
+  Thank you for being with us!
+
+subscription_status_none: |
+  ❌ <b>You do not have an active subscription.</b>
+  
+  Subscribe to get access to our private community.
+
+subscription_checkout_message: |
+  🔐 <b>Subscribe via Stripe</b>
+  
+  Click the button below to proceed to secure Stripe Checkout:
+
+subscription_checkout_button: '💳 Proceed to Payment'
+
+subscription_activated_title: |
+  🎉 <b>Payment successful!</b>
+  
+  Your subscription is active until: <b>${expiresAt}</b>
+  
+  🔗 <b>Your personal invite link:</b>
+  ${inviteLink}
+  
+  <i>Note: This link is one-time use and valid only for you.</i>
+
+subscription_reminder_title: |
+  ⚠️ <b>Subscription reminder!</b>
+  
+  Your subscription expires in <b>${days} days</b> (on ${expiresAt}).
+  Please renew in advance to avoid losing access to the private channel.
+
+subscription_expired_title: |
+  ⛔️ <b>Subscription expired</b>
+  
+  Unfortunately, your subscription was not renewed and your access has been suspended.
+  You can renew your subscription at any time using the bot menu!
+

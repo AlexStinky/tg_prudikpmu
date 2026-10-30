@@ -37,12 +37,13 @@ class SubscriptionService {
             await sender.unbanUser(CHANNEL_ID, chat_id);
         }
 
-        // Генерируем персональную инвайт-ссылку (1 использование)
+        // Генерируем персональную инвайт-ссылку с запросом на вступление (join request)
         let inviteLink = null;
         if (CHANNEL_ID) {
             try {
-                const res = await sender.bot.telegram.createChatInviteLink(CHANNEL_ID, {
-                    member_limit: 1,
+                const res = await sender.bot.telegram.callApi('createChatInviteLink', {
+                    chat_id: CHANNEL_ID,
+                    creates_join_request: true,
                     name: `Sub: ${user.username || chat_id}`
                 });
                 inviteLink = res.invite_link;

@@ -1,0 +1,60 @@
+start_message: 'Witaj! Tutaj możesz wykupić lub odnowić subskrypcję do naszego prywatnego kanału/czatu.'
+
+subscribe_button: '💳 Kup subskrypcję'
+status_button: 'ℹ️ Moja subskrypcja'
+renew_button: '🔄 Odnów subskrypcję'
+language_button: '🌐 Język / Language'
+
+done_button: 'Gotowe'
+confirm_button: 'Potwierdź'
+back_button: 'Wstecz'
+close_button: 'Zamknij'
+cancel_button: 'Anuluj'
+
+choose_language_title: 'Wybierz język interfejsu:'
+language_changed: 'Język został zmieniony!'
+
+user_url: '<a href="tg://user?id=${id}">${username}</a>'
+bot_url: 'https://t.me/${username}?start=${query}'
+channel_url: '<a href="${url}">${title}</a>'
+
+subscription_status_active: |
+  ✅ <b>Twoja subskrypcja jest aktywna!</b>
+  📅 Ważna do: <b>${expiresAt}</b>
+  
+  Dziękujemy, że jesteś z nami!
+
+subscription_status_none: |
+  ❌ <b>Nie posiadasz aktywnej subskrypcji.</b>
+  
+  Wykup subskrypcję, aby uzyskać dostęp do prywatnego kanału.
+
+subscription_checkout_message: |
+  🔐 <b>Płatność za subskrypcję</b>
+  
+  Aby opłacić subskrypcję, kliknij w poniższy bezpieczny link Stripe:
+
+subscription_checkout_button: '💳 Przejdź do płatności'
+
+subscription_activated_title: |
+  🎉 <b>Płatność zakończona sukcesem!</b>
+  
+  Twoja subskrypcja jest aktywna do: <b>${expiresAt}</b>
+  
+  🔗 <b>Twój osobisty link do dołączenia:</b>
+  ${inviteLink}
+  
+  <i>Uwaga: link jest jednorazowy i przeznaczony wyłącznie dla Ciebie.</i>
+
+subscription_reminder_title: |
+  ⚠️ <b>Przypomnienie o subskrypcji!</b>
+  
+  Do wygaśnięcia subskrypcji pozostało <b>${days} dni</b> (do ${expiresAt}).
+  Odnów subskrypcję wcześniej, aby nie stracić dostępu do kanału.
+
+subscription_expired_title: |
+  ⛔️ <b>Subskrypcja wygasła</b>
+  
+  Niestety subskrypcja nie została odnowiona, a dostęp do kanału został zawieszony.
+  Możesz wznowić subskrypcję w dowolnym momencie w menu bota!
+

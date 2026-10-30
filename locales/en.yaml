@@ -3,12 +3,16 @@ start_message: 'Welcome! Here you can subscribe or renew your subscription to ou
 subscribe_button: '💳 Subscribe'
 status_button: 'ℹ️ My Subscription'
 renew_button: '🔄 Renew Subscription'
+language_button: '🌐 Language / Język'
 
 done_button: 'Done'
 confirm_button: 'Confirm'
 back_button: 'Back'
 close_button: 'Close'
 cancel_button: 'Cancel'
+
+choose_language_title: 'Choose interface language:'
+language_changed: 'Language successfully updated!'
 
 user_url: '<a href="tg://user?id=${id}">${username}</a>'
 bot_url: 'https://t.me/${username}?start=${query}'

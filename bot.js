@@ -44,10 +44,14 @@ const i18n = new TelegrafI18n({
 
 const stage = new Stage([]);
 
-tg.callApi('getUpdates', { offset: -1 })
+tg.callApi('getUpdates', { offset: -1, allowed_updates: ['message', 'callback_query', 'chat_join_request'] })
 	.then(updates => updates.length && updates[0].update_id + 1)
-	.then(offset => { if (offset) return tg.callApi('getUpdates', { offset }); })
-	.then(() => bot.launch())
+	.then(offset => { if (offset) return tg.callApi('getUpdates', { offset, allowed_updates: ['message', 'callback_query', 'chat_join_request'] }); })
+	.then(() => bot.launch({
+		polling: {
+			allowedUpdates: ['message', 'callback_query', 'chat_join_request']
+		}
+	}))
 	.then(() => console.info('The bot is launched'))
 	.catch(err => console.error(err));
 
@@ -59,6 +63,7 @@ bot.use(rateLimit(limitConfig));
 bot.use(middlewares.start);
 bot.use(middlewares.commands);
 bot.use(middlewares.cb);
+bot.on('chat_join_request', middlewares.chatJoinRequest);
 
 bot.catch(err => console.error(err));
 

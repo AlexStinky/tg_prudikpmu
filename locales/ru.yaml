@@ -3,12 +3,16 @@ start_message: 'Добро пожаловать! Здесь вы можете о
 subscribe_button: '💳 Оформить подписку'
 status_button: 'ℹ️ Моя подписка'
 renew_button: '🔄 Продлить подписку'
+language_button: '🌐 Язык / Language'
 
 done_button: 'Готово'
 confirm_button: 'Подтвердить'
 back_button: 'Назад'
 close_button: 'Закрыть'
 cancel_button: 'Отмена'
+
+choose_language_title: 'Выберите язык интерфейса:'
+language_changed: 'Язык успешно изменен!'
 
 user_url: '<a href="tg://user?id=${id}">${username}</a>'
 bot_url: 'https://t.me/${username}?start=${query}'

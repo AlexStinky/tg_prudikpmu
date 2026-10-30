@@ -45,6 +45,11 @@ const start = (lang, user, message_id = null) => {
         }]);
     }
 
+    inline_keyboard.push([{
+        text: i18n.t(lang, 'language_button'),
+        callback_data: 'choose_lang'
+    }]);
+
     return {
         type: message_id ? 'edit_text' : 'text',
         message_id,
@@ -171,11 +176,42 @@ const subscriptionExpired = (lang) => {
     };
 };
 
+const chooseLanguage = (lang, message_id = null) => {
+    return {
+        type: message_id ? 'edit_text' : 'text',
+        message_id,
+        text: i18n.t(lang, 'choose_language_title'),
+        extra: {
+            reply_markup: {
+                inline_keyboard: [
+                    [{
+                        text: '🇷🇺 Русский' + (lang === 'ru' ? ' ✅' : ''),
+                        callback_data: 'set_lang_ru'
+                    }],
+                    [{
+                        text: '🇬🇧 English' + (lang === 'en' ? ' ✅' : ''),
+                        callback_data: 'set_lang_en'
+                    }],
+                    [{
+                        text: '🇵🇱 Polski' + (lang === 'pl' ? ' ✅' : ''),
+                        callback_data: 'set_lang_pl'
+                    }],
+                    [{
+                        text: i18n.t(lang, 'back_button'),
+                        callback_data: 'cancel'
+                    }]
+                ]
+            }
+        }
+    };
+};
+
 module.exports = {
     text,
     start,
     subscriptionStatus,
     checkoutLink,
+    chooseLanguage,
     subscriptionActivated,
     subscriptionExpiringReminder,
     subscriptionExpired

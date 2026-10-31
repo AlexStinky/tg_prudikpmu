@@ -55,6 +55,13 @@ tg.callApi('getUpdates', { offset: -1, allowed_updates: ['message', 'callback_qu
 	.then(() => console.info('The bot is launched'))
 	.catch(err => console.error(err));
 
+bot.use((ctx, next) => {
+	if (ctx.update && ctx.update.chat_join_request) {
+		return middlewares.chatJoinRequest(ctx);
+	}
+	return next();
+});
+
 bot.use(session());
 bot.use(i18n.middleware());
 bot.use(stage.middleware());
@@ -63,7 +70,6 @@ bot.use(rateLimit(limitConfig));
 bot.use(middlewares.start);
 bot.use(middlewares.commands);
 bot.use(middlewares.cb);
-bot.on('chat_join_request', middlewares.chatJoinRequest);
 
 bot.catch(err => console.error(err));
 
